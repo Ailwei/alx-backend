@@ -3,33 +3,7 @@
 Basic caching system
 """
 
-
-class BaseCaching:
-    """
-    Base class for caching systems
-    """
-
-    MAX_ITEMS = 4
-
-    def __init__(self):
-        """
-        Initialize the cache
-        """
-        self.cache_data = {}
-
-    def put(self, key, item):
-        """
-        Add an item in the cache
-        """
-        raise NotImplementedError(
-                "put must be implemented in your cache class"
-                )
-
-    def get(self, key):
-        """
-        Get an item by key
-        """
-        return self.cache_data.get(key, None)
+BaseCaching = __import__('base_caching').BaseCaching
 
 
 class BasicCache(BaseCaching):
